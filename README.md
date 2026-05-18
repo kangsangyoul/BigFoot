@@ -1,6 +1,16 @@
 # Project Nexus
 
-모바일 퍼스트 기반의 IT 인력 매칭 플랫폼 MVP입니다. 개발자와 프로젝트를 최소 입력으로 빠르게 연결하고, AI 태그 추출과 embedding 기반 적합도 추천을 중심으로 설계했습니다.
+모바일 퍼스트 기반의 IT 인력 매칭 플랫폼 MVP입니다. 지금 단계의 목표는 기능을 많이 넣는 것이 아니라, **로그인 → 회원 유형 선택 → 개발자 추천 카드 → 프로젝트 상세/CTA** 흐름이 앱처럼 작동하는 것입니다.
+
+## 절대 원칙
+
+- 모바일 퍼스트
+- 카드 중심 UX
+- 텍스트 최소화
+- 하단 탭 구조
+- 한 화면 한 액션
+- 초기 AI는 OpenAI Embedding + cosine similarity만 사용
+- 초기 DB는 `users`, `developer_profiles`, `projects`, `matches`만 유지
 
 ## Stack
 
@@ -8,16 +18,31 @@
 - TypeScript
 - TailwindCSS
 - shadcn/ui 스타일의 로컬 UI primitives
-- Supabase + PostgreSQL + pgvector
-- Vercel 배포 대상
+- Supabase Client + PostgreSQL + pgvector
+- Zustand
+- ESLint + Prettier
 
-## MVP 범위
+## App Router 구조
 
-- 모바일 홈 화면 및 카드 중심 추천 UX
-- 개발자/기업 양면 흐름 데모
-- 프로젝트 카드, 추천 인재 카드, 빠른 액션 CTA
-- AI 태그 추출 및 cosine similarity 점수 계산 유틸리티
-- Supabase 데이터베이스 스키마 초안
+```txt
+app/
+  (auth)/login
+  (auth)/role
+  (developer)/developer
+  (company)/company
+  (shared)/projects/[id]
+components/
+lib/
+types/
+hooks/
+```
+
+## MVP 흐름
+
+1. `/login` — 이메일/Google 로그인 진입
+2. `/role` — 개발자/기업 회원 유형 선택
+3. `/developer` — 추천 프로젝트 카드만 표시
+4. `/projects/[id]` — 프로젝트 상세와 하단 고정 CTA
 
 ## 개발
 
