@@ -7,7 +7,7 @@ export const projects: Project[] = [
     company: "A 금융그룹",
     score: 96,
     monthlyRate: "1,250만원",
-    location: "여의도",
+    meta: { location: "여의도", duration: "8개월" },
     skills: ["금융권", "API", "Oracle", "Java"],
   },
   {
@@ -16,7 +16,7 @@ export const projects: Project[] = [
     company: "B 증권",
     score: 92,
     monthlyRate: "1,120만원",
-    location: "강남",
+    meta: { location: "강남", duration: "6개월" },
     skills: ["Java", "Spring", "MSA", "상주"],
   },
   {
@@ -25,7 +25,7 @@ export const projects: Project[] = [
     company: "C 핀테크",
     score: 89,
     monthlyRate: "980만원",
-    location: "원격",
+    meta: { location: "원격", duration: "10개월" },
     skills: ["운영", "Oracle", "Batch", "원격"],
   },
 ];

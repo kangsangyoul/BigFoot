@@ -12,15 +12,15 @@ export default function Page() {
         <div className="flex items-end justify-between">
           <div>
             <h1 className="text-2xl font-bold leading-tight text-slate-900">추천 프로젝트</h1>
-            <p className="mt-1 text-sm text-slate-500">지금 바로 투입 가능한 포지션이에요</p>
+            <p className="mt-1 text-sm text-slate-500">빠르게 보고 바로 지원해보세요</p>
           </div>
-          <span className="rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold text-blue-700">NEW</span>
+          <span className="rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold text-blue-700">TOP</span>
         </div>
       </header>
 
       <section className="space-y-3">
-        {projects.map((project) => (
-          <ProjectCard key={project.id} project={project} />
+        {projects.map((project, index) => (
+          <ProjectCard key={project.id} project={project} index={index} />
         ))}
       </section>
 
